@@ -5,11 +5,10 @@ public class TestSpring {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        TestBean tBean = context.getBean("testBean", TestBean.class);
 
-        tBean.setName("Serhii");
+        musicPlayer music =  context.getBean("musicPlayer", musicPlayer.class);
 
-        System.out.println(tBean.getName());
+        System.out.println(music.getSong());
 
         context.close();
     }
